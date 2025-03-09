@@ -20,7 +20,8 @@ function addEmployeeCard(name, position) {
     removeButton.textContent = "Remove";
     removeButton.classList.add("remove-button");
 
-    removeButton.addEventListener("click", function () {
+    removeButton.addEventListener("click", function (event) {
+        event.stopPropagation();
         employeeContainer.removeChild(employeeCard);
     });
 
@@ -47,3 +48,13 @@ employeeCards.forEach(card => {
     card.style.backgroundColor = "aquamarine";
     card.style.color = "purple";
 });
+
+
+// Task 4 - Implementing Removal of Employee Cards with Event Bubbling
+    //Added remove event listner in task 2
+
+const employeeContainer = document.getElementById("employeeContainer");
+employeeContainer.addEventListener("click", function () {
+    console.log("Card Clicked");
+});
+//Stop propagation added to task 2
