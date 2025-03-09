@@ -35,6 +35,15 @@ function addEmployeeCard(name, position) {
     employeeContainer.appendChild(employeeCard);
 
 }
-
+// Test Cases
 addEmployeeCard("Colby Mullins", "Awesome Camper");
 addEmployeeCard("Alice Clark", "Cat Farmer");
+
+// Task 3 - Converting NodeLists to Arrays for Bulk Updates
+
+let employeeCards = Array.from(document.querySelectorAll(".employee-card"));
+
+employeeCards.forEach(card => {
+    card.style.backgroundColor = "aquamarine";
+    card.style.color = "purple";
+});
